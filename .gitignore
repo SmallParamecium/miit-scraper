@@ -24,3 +24,7 @@ output/*.md
 # OS
 .DS_Store
 Thumbs.db
+
+# Project auxiliary files
+Conversation参考.md
+issue参照.md

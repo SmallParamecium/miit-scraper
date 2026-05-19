@@ -4,7 +4,7 @@
 
 ## 项目状态
 
-🚧 开发中 — 当前处于 Issue #1 项目初始化阶段。
+✅ 核心功能已实现 — Issues #1~#4 已完成，进入完善阶段。
 
 ## 功能
 
@@ -53,11 +53,13 @@ miit-scraper/
 
 ## Issues
 
-采用 spec-driven 开发，每个环节通过 GitHub Issue 追踪：
+采用 spec-driven 开发，每个 Issue 对应 `docs/` 下的 spec 文档：
 
-| Issue | 内容 |
-|-------|------|
-| #1 | 项目初始化：uv 配置、目录结构、数据模型 |
-| #2 | 列表页 API 解析 |
-| #3 | 文章抓取与输出 |
-| #4 | CLI 入口 + 测试完善 |
+| Issue | 内容 | 状态 |
+|-------|------|------|
+| #1 | 项目初始化：uv 配置、目录结构、数据模型 | ✅ Closed |
+| #2 | 列表页 API 请求模块 (fetcher.py) | ✅ Closed |
+| #3 | 文章详情页爬取 (parser.py) | ✅ Closed |
+| #4 | CLI 入口 + 数据导出 (exporter.py + cli.py) | ✅ Closed |
+| #11 | 修复 cli.py ImportError + .gitignore | ✅ Closed |
+| #12 | 补充 OpenSpec 文档 | ✅ Closed |

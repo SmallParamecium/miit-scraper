@@ -8,11 +8,20 @@ import argparse
 import sys
 from pathlib import Path
 
-from . import __version__
-from .fetcher import fetch_article_list
-from .parser import fetch_and_parse_article
-from .exporter import save_raw_json, save_markdown
-from .models import Article
+try:
+    from . import __version__
+    from .fetcher import fetch_article_list
+    from .parser import fetch_and_parse_article
+    from .exporter import save_raw_json, save_markdown
+    from .models import Article
+except ImportError:
+    # 当直接运行 python cli.py（非包上下文）时，回退为独立导入
+    sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
+    from miit_scraper import __version__
+    from miit_scraper.fetcher import fetch_article_list
+    from miit_scraper.parser import fetch_and_parse_article
+    from miit_scraper.exporter import save_raw_json, save_markdown
+    from miit_scraper.models import Article
 
 
 def main(argv: list[str] | None = None) -> None:
