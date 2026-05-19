@@ -4,9 +4,17 @@
 fetcher（列表页获取） -> parser（详情页解析） -> exporter（数据输出）
 """
 
-import argparse
 import sys
 from pathlib import Path
+
+# 允许直接运行 python cli.py 时正确解析包内相对导入
+if __name__ == "__main__":
+    _src_dir = Path(__file__).resolve().parent.parent
+    if str(_src_dir) not in sys.path:
+        sys.path.insert(0, str(_src_dir))
+    __package__ = "miit_scraper"
+
+import argparse
 
 from . import __version__
 from .fetcher import fetch_article_list
